@@ -30,9 +30,10 @@ function App() {
         //   date: (2021 , 5 , 12)
         },
       ]; 
-      
+
     return(
         <div>
+            <h2>Let's get started</h2>
             {expenses.map(expense =>(
                 <Expenses
                 title = {expense.title}
