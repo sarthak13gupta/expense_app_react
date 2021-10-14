@@ -45,10 +45,8 @@ function App() {
                 date = {expense.date}
                 />
             ))}
-            </div>
-            
+            </div>    
         </div>   
     )
 }
-
 export default App;
