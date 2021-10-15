@@ -1,9 +1,12 @@
 import "./Expenses.css"
+import ExpensesFilter from "../ExpensesFilter/ExpensesFilter"
 import Card from "../UI/Card"
 import ExpenseItem from "./ExpenseItem"
 const Expenses = (props) => {
     return (
-        <Card className="expenses">
+        <div>
+            {/* <ExpensesFilter/> */}
+            <Card className="expenses">
             {
                 <ExpenseItem           
                 date =  {props.date}
@@ -12,6 +15,8 @@ const Expenses = (props) => {
                 />
             }
         </Card>
+        </div>
+        
     )
 }
 export default Expenses

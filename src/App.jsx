@@ -1,6 +1,9 @@
+import { useState } from "react";
+
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import Expenses from "./components/Expenses/Expenses"
 import NewExpense from "./components/NewExpense/NewExpense";
+import ExpensesFilter from "./components/ExpensesFilter/ExpensesFilter";
 function App() {
     const expenses = [
         {
@@ -36,10 +39,20 @@ function App() {
         console.log(expense)
     }
 
+    const [saveYear , setSaveYear] = useState('2020')  
+
+    const saveYearChangeHandler = (year) => {
+        console.log(year)
+        setSaveYear(year)
+    }
+
     return(
         <div>
             <div>
             <NewExpense onAddExpense = {addExpenseHandler}/>
+            <div>
+                <ExpensesFilter  defaultYear = {saveYear} onSaveYearChange = {saveYearChangeHandler}/>
+            </div>
             </div> 
             <div>
             {expenses.map(expense =>(
