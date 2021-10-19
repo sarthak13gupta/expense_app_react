@@ -37,10 +37,15 @@ const DUMMY_EXPENSES = [
 function App() {
 
   const [expenses , setExpenses] = useState(DUMMY_EXPENSES) 
-    const addExpenseHandler = (expense) => {
-        setExpenses((prevExpenses) => {
-          return [expense , ...prevExpenses]})
+  const addExpenseHandler = async (expense) => {
+      await setExpenses((prevExpenses) => {
+          let newExpenses = [expense].concat(prevExpenses);
+          console.log(newExpenses);
+          return newExpenses;/*[expense , ...prevExpenses]*/
+      });
+      console.log('new', expenses);
     }
+
     return(
         <div>
             <div>
