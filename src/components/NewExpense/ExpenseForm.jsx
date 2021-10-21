@@ -3,6 +3,8 @@ import { useState } from "react"
 import "./ExpenseForm.css"
 const ExpenseForm = (props) => {
 
+    
+
 
     const [EnteredTitle , setEnteredTitle] = useState()
     const [EnteredAmount , setEnteredAmount] = useState()
@@ -36,7 +38,30 @@ const ExpenseForm = (props) => {
         setEnteredTitle('')
 
         console.log(expenseData)
+
+        // formHandler()
+
+
     }
+    // const [flag , setFlag] = useState(0)
+
+    // const formHandler = () => {
+    //      if (flag === 0){
+    //          setFlag(1)
+    //      }
+    //      else{
+    //          setFlag(0)
+    //      }
+    // }
+    
+
+    // if (flag ===0) {
+    //     return (
+    //         <div className = "new-expense__actions_center">
+    //             <button onClick = {formHandler} >New Expense Handler</button>
+    //         </div>
+    //     )
+    // }
 
 
     return (
@@ -62,7 +87,8 @@ const ExpenseForm = (props) => {
                </div>
            </div>
            <div className="new-expense__actions">
-               <button type="submit">Add Expense</button>
+               <button type = "button" onClick={props.onCancel}>Cancel</button>
+               <button type = "submit">Add Expense</button>
            </div>
        </form>
     )
